@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# $1 is the state (pre/post), $2 is the action (suspend/hibernate)
+# /usr/lib/systemd/system-sleep/, chmod  +x
+case "$1" in
+    pre)
+        # /usr/sbin/modprobe -r brcmfmac_wcc
+        # /usr/sbin/modprobe -r brcmfmac
+        # /usr/sbin/modprobe -r facetimehd
+        echo 0 > /sys/devices/system/cpu/cpu1/online
+        echo 0 > /sys/devices/system/cpu/cpu2/online
+        echo 0 > /sys/devices/system/cpu/cpu3/online
+        echo 0 > /sys/devices/system/cpu/cpu4/online
+        echo 0 > /sys/devices/system/cpu/cpu5/online
+        echo 0 > /sys/devices/system/cpu/cpu6/online
+        echo 0 > /sys/devices/system/cpu/cpu7/online
+        ;;
+    post)
+        echo 1 > /sys/devices/system/cpu/cpu1/online
+        echo 1 > /sys/devices/system/cpu/cpu2/online
+        echo 1 > /sys/devices/system/cpu/cpu3/online
+        echo 1 > /sys/devices/system/cpu/cpu4/online
+        echo 1 > /sys/devices/system/cpu/cpu5/online
+        echo 1 > /sys/devices/system/cpu/cpu6/online
+        echo 1 > /sys/devices/system/cpu/cpu7/online
+        # /usr/sbin/modprobe brcmfmac
+        # /usr/sbin/modprobe facetimehd
+        ;;
+esac
