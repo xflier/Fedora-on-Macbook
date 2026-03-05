@@ -1,6 +1,6 @@
 # Fedora on MacBook Pro 11,4 (Mid-2015)
 
-This repository documents hardware-specific fixes and tips to run Fedora Linux reliably on the MacBook Pro 11,4 (Mid-2015). The machine can run Fedora well, but a few workarounds are required for the FaceTime HD camera and for suspend/wake stability.
+This repository documents hardware-specific fixes and tips to run Fedora Linux reliably on the MacBook Pro 11,4 (Mid-2015). The laptop can run Fedora well, but a few workarounds are required for the FaceTime HD camera and for suspend/wake stability.
 
 ## Contents
 
@@ -14,7 +14,7 @@ This repository documents hardware-specific fixes and tips to run Fedora Linux r
 
 ## Overview
 
-Primary issues covered here:
+Primary issues covered here (on Fedora 43):
 
 - FaceTime HD camera not recognized (requires non-free firmware + driver)
 - Long delays or hangs when waking from suspend (network and power/state workarounds)
@@ -125,11 +125,11 @@ sudo chmod +x /usr/lib/systemd/system-sleep/fix_wake
 
 MAC address randomization
 
-If you want to enable the repository's suggested NetworkManager MAC randomization config, copy `00-macrandomize.conf` to `/etc/NetworkManager/conf.d/` and restart NetworkManager:
+If you want to enable the repository's suggested NetworkManager MAC randomization config, copy `main.conf` to `/etc/iwd/` and restart iwd:
 
 ```bash
-sudo cp 00-macrandomize.conf /etc/NetworkManager/conf.d/
-sudo systemctl restart NetworkManager
+sudo cp main.conf /etc/iwd/
+sudo systemctl restart iwd
 ```
 
 ## Notes & troubleshooting
