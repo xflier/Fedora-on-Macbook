@@ -123,7 +123,7 @@ Make it executable:
 sudo chmod +x /usr/lib/systemd/system-sleep/fix_wake
 ```
 
-MAC address randomization
+MAC address randomization - Optional
 
 If you want to enable the repository's suggested NetworkManager MAC randomization config, copy `main.conf` to `/etc/iwd/` and restart iwd:
 
