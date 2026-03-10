@@ -6,7 +6,7 @@ case "$1" in
     pre)
         # /usr/sbin/modprobe -r brcmfmac_wcc
         # /usr/sbin/modprobe -r brcmfmac
-        # /usr/sbin/modprobe -r facetimehd
+        /usr/sbin/modprobe -r facetimehd
         for i in 1 2 3 4 5 6 7; do
             echo 0 > /sys/devices/system/cpu/cpu$i/online || true
         done
@@ -16,6 +16,6 @@ case "$1" in
             echo 1 > /sys/devices/system/cpu/cpu$i/online || true
         done
         # /usr/sbin/modprobe brcmfmac
-        # /usr/sbin/modprobe facetimehd
+        /usr/sbin/modprobe facetimehd
         ;;
 esac
