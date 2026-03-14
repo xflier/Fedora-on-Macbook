@@ -18,7 +18,7 @@ case "$1" in
         echo 0 > /sys/module/snd_hda_intel/parameters/power_save # disable the sound
         # /usr/sbin/modprobe brcmfmac
         /usr/sbin/modprobe facetimehd
-        #systemctl restart NetworkManager 
+        systemctl restart NetworkManager 
         #systemctl restart upower
         ;;
 esac
