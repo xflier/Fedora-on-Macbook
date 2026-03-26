@@ -15,7 +15,7 @@ case "$1" in
         for i in 1 2 3 4 5 6 7; do
             echo 1 > /sys/devices/system/cpu/cpu$i/online || true
         done
-        echo 0 > /sys/module/snd_hda_intel/parameters/power_save # disable the sound
+        # echo 0 > /sys/module/snd_hda_intel/parameters/power_save # disable the sound
         # /usr/sbin/modprobe brcmfmac
         /usr/sbin/modprobe facetimehd
         systemctl restart NetworkManager 
